@@ -1,0 +1,27 @@
+body {
+  background-image: url('/images/brickwall_@2X.png');
+}
+
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color: black;
+  font-size: 60px;
+}
+
+h2, h3, h4 {
+  font-family: $font-accent;
+  text-align: center;
+  color: $color-accent;
+}
+
+p {
+  font-family: $font-main;
+  color: $color-main;
+}
+
+a {
+  font-family: $font-main;
+  color: $color-accent;
+}

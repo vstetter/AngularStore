@@ -1,0 +1,32 @@
+<!-- display all products -->
+<h1 class="logo">LightBox</h1>
+
+<div class="nav_Views">
+    <a href="#/"><span class="fa-lg">
+      <i class="fa fa-lightbulb-o"></i>
+    </span>Home</a>
+    <a href="#/admin/addproduct"><span class="fa-lg">
+      <i class="fa fa-plus"></i>
+    </span>Add Product</a>
+
+</div>
+
+
+<div class="listContainer">
+  <ul>
+    <li class = "item" ng-repeat="item in mainCtrl.items">
+
+      <img ng-src="{{item.image}}" height='250' alt=""/>
+      <div class="productInfo">
+        <h3>{{item.productName}}</h3>
+        <h4>${{item.price}}</h4>
+        <p>{{item.productDescription}}</p>
+        <a href="#/admin/editproduct/{{$index}}">Edit</a>
+        <button type="submit" ng-click="mainCtrl.deleteProduct(item)">Delete Item</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<!--     <a href="#/store/{{item._id}}/edit">Edit</a> | <a href="" ng-click="deleteItem(item._id)">Delete</a></p>   -->

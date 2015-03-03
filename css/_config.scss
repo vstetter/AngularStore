@@ -1,0 +1,20 @@
+/* font-family: 'Source Sans Pro', sans-serif;
+
+font-family: 'Permanent Marker', cursive;
+
+font-family: 'Special Elite', cursive; */
+
+
+$font-main: 'Source Sans Pro', sans-serif;
+$font-accent: 'Special Elite', cursive;
+
+$color-main: black;
+$color-accent: #56524e;
+$color-bg: white;
+
+
+.shadow {
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
+  -moz-box-shadow:    0px 7px 20px 0px rgba(50, 50, 50, 0.3);
+  box-shadow:         0px 7px 20px 0px rgba(50, 50, 50, 0.3);
+}

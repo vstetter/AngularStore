@@ -1,0 +1,37 @@
+<h1 class="logo">LightBox</h1>
+
+<div class="nav_Views">
+  <a href="#/user/listView"><span class="fa-lg">
+    <i class="fa fa-arrow-left"></i>
+  </span>Continue Shopping</a>
+</div>
+
+<div class="shoppingCartContainer">
+
+  <h3>Shopping Cart</h3>
+
+
+<div class="cartContainer">
+  <ul>
+    <li class = "cartitem" ng-repeat="item in mainCtrl.cartProducts">
+
+<!--       <img ng-src="{{item.image}}" height='250' alt=""/> -->
+        <p class="cartName">{{item.productName}}</p>
+        <p class="cartPrice">${{item.price}}</p>
+        <p class="itemQuantity">Quantity: <span><input type="number" name="inputquant" ng-model="item.quant"></span></p>
+        <div class="cartbuttons">
+          <button type="submit" ng-click="mainCtrl.deleteFromCart(item)">Delete</button>
+
+          <a href="">Update</a>
+        </div>
+        <p class="itemTotal">Item total: {{item.quant * item.price | currency}}</p>
+    </li>
+  </ul>
+  <p class="totalPrice"> Total: {{mainCtrl.total() | currency}}</p>
+</div>
+
+
+</div>
+
+<!-- productName - price - quantity - Item total -->
+<!-- grand total -->
