@@ -21,8 +21,8 @@
         <h3>{{item.productName}}</h3>
         <h4>${{item.price}}</h4>
         <p>{{item.productDescription}}</p>
-        <a href="#/admin/editproduct/{{$index}}">Edit</a>
-        <button type="submit" ng-click="mainCtrl.deleteProduct(item)">Delete Item</button>
+        <a href="#/admin/editproduct/{{item._id}}" class="listviewEdit">Edit</a>
+        <button type="submit" ng-click="mainCtrl.deleteProduct(item._id)">Delete Item</button>
       </div>
     </li>
   </ul>

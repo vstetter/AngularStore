@@ -36,10 +36,13 @@
     padding-top: 1%;
     margin-bottom: 5%;
   }
-/*   button {
-  font-size: 0.8em;
-  padding: 1% 2% 1% 2%;
-} */
+  .buttons2 div {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    /*     font-size: 0.8em; */
+    padding: 4% 2% 1% 2%;
+  }
   a {
     border: thin solid $color-accent;
     font-size: 0.8em;

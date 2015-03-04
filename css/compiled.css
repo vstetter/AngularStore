@@ -110,13 +110,19 @@ h2 {
     padding-bottom: 2%; }
   .item p {
     padding-top: 1%; }
-  .item button {
-    font-size: 0.8em;
-    padding: 1% 2% 1% 2%; }
+  .item .buttons2 div {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    /*     font-size: 0.8em; */
+    padding: 4% 2% 1% 2%; }
   .item a {
     border: thin solid #56524e;
-    font-size: 0.8em;
-    padding: 1% 2% 1% 2%; }
+    font-size: 1em;
+    padding: 2% 3% 2% 3%; }
+  .item .listviewEdit {
+    padding: 1% 2% 1% 2%;
+    font-size: 0.8em; }
 
 .logo {
   font-size: 2em;
@@ -195,17 +201,19 @@ button {
   min-height: 375px;
   text-align: center;
   padding: 1%;
-  margin: 2%;
-  /*   button {
-  font-size: 0.8em;
-  padding: 1% 2% 1% 2%;
-} */ }
+  margin: 2%; }
   .itemDetail h3, .itemDetail h4, .itemDetail p, .productReviews h3, .productReviews h4, .productReviews p {
     padding-top: 2%;
     padding-bottom: 2%; }
   .itemDetail p, .productReviews p {
     padding-top: 1%;
     margin-bottom: 5%; }
+  .itemDetail .buttons2 div, .productReviews .buttons2 div {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    /*     font-size: 0.8em; */
+    padding: 4% 2% 1% 2%; }
   .itemDetail a, .productReviews a {
     border: thin solid #56524e;
     font-size: 0.8em;

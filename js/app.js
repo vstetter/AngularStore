@@ -12,7 +12,7 @@
         templateUrl: 'views/main.html',
         controller: 'MainController as mainCtrl'
       })
-      .when('/admin/editproduct/:itemIndex', {   //change to id for $http use.Change in views, too
+      .when('/admin/editproduct/:itemIndex', {   
         templateUrl:'views/admin/editItem.html',
         controller: 'MainController as mainCtrl'
       })
@@ -30,7 +30,7 @@
       })
       .when('/user/cart', {
         templateUrl: 'views/user/shoppingCart.html',
-        controller: 'MainController as mainCtrl'
+        controller: 'CartController as cartCtrl'
       })
       .when('/user/detail/:itemIndex', {
         templateUrl: 'views/user/detailView.html',

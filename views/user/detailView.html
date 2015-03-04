@@ -18,12 +18,18 @@
       </div>
       <div class="productDetails">
         <p>{{mainCtrl.singleItem.productDescription}}</p>
-        <a href="#/user/cart/" ng-click="mainCtrl.addToCart(mainCtrl.singleItem)">Add to Cart</a>
-        <a href="" ng-click="showReviews = !showReviews">Show Reviews</a>
+        <div class="buttons2">
+          <div ng-controller="CartController as cartCtrl">
+            <a href="#/user/cart/" ng-click="cartCtrl.addToCart(mainCtrl.singleItem)">Add to Cart</a>
+          </div>
+          <div>
+            <a href="" ng-click="showReviews = !showReviews">Show Reviews</a>
+          </div>
+        </div>
       </div>
     </div>
 
-  <div class="productReviews" ng-show = "showReviews">
+  <div class="productReviews" ng-controller="ReviewController as reviewCtrl" ng-show = "showReviews">
     <ul>
       <li class="review" ng-repeat="review in reviewCtrl.reviews">
         <p>Stars: {{reviewCtrl.review.stars}}</p>
@@ -33,7 +39,7 @@
     </ul>
     <a href="" ng-click="showAddReview = !showAddReview">Add Review</a>
     <div class="addReview" ng-show = "showAddReview" >
-      <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(item)">
+      <form name="reviewForm" ng-submit="reviewCtrl.addReview(item)">
         <p class="stars">Stars: <span><input type="number" name="reviewstars" ng-model="review.stars"></span></p>
         <p class="reviewBody">
           <textarea name="reviewBody" ng-model="review.body" cols="30" rows="10"></textarea>
@@ -43,11 +49,6 @@
           <button type="submit">Submit Review</button>
         </p>
       </form>
-
-
     </div>
-
-
-
   </div>
 </div>
