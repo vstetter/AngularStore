@@ -62,13 +62,19 @@ angular.module('storeApp')
     // ];
 
 
+// Admin
 
     var getProducts = function () {
       return $http.get(url);
       // return products;
     };
 
+    var getSingleItem = function (id) {  // was (index)
+      return $http.get(url + '/' +id);
+    };
+
     var addProduct = function (item) {
+      item.reviews = [];
       $http.post(url, item);
       $rootScope.$broadcast('item:created')
       // products.push(item);
@@ -86,25 +92,21 @@ angular.module('storeApp')
       // products[index] = item;
     };
 
-    var getSingleItem = function (id) {  // was (index)
-      return $http.get(url + '/' +id);
+// User
+
+  // reviews
+
+    var addReview = function (item, review) {
+      review = {
+        stars: 0,
+        body: '',
+        author: ''
+      }
+      item.reviews.push(review);
+      $http.put(url + '/' + item._id, item);
     };
 
-    // var addReview = function (review) {
-    //   products.push(review)
-    // };
-
-    return {
-      getItems: getProducts,
-      addItem: addProduct,
-      deleteItem: deleteProduct,
-      getItem: getSingleItem,
-      editItem: editProduct,
-      // addReview: addReview
-    };
-
-  })
-  .factory('CartService', function ($http) {
+  // cart
 
     var cart = [ ];  //changed from cartProducts to cart
 
@@ -116,22 +118,37 @@ angular.module('storeApp')
       return cart;
     };
 
-    var getSingleCartProduct = function (id) {
-      return cart[id];
-    };
+    // var getSingleCartProduct = function (id) {
+    //   return cart[id];
+    // };
 
     var deleteCartProducts = function (item) {
       var idx = cart.indexOf(item);
       cart.splice(idx,1);
     };
 
-//calvin's example has calculateTotal function for cart here rather than in controller
+    var total = function() {
+      var total = 0;
+      angular.forEach(cart, function(item) {
+      total += item.quant * item.price;
+      })
+      return total;
+    };
 
-return {
+
+    return {
+      getItems: getProducts,
+      getItem: getSingleItem,
+      addItem: addProduct,
+      deleteItem: deleteProduct,
+      editItem: editProduct,
+      addReview: addReview,
+
       addToCart: addToCart,
       getCartItems: getCartProducts,
-      getCartItem: getSingleCartProduct,
-      deleteFromCart: deleteCartProducts
+      // getCartItem: getSingleCartProduct,
+      deleteFromCart: deleteCartProducts,
+      total: total
     };
 
   });

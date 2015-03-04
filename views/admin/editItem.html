@@ -10,11 +10,11 @@
 
   <h3>Edit product</h3>
 
-  <form ng-submit="mainCtrl.editProduct(mainCtrl.singleItem)">
-    <input type="text" ng-model="mainCtrl.singleItem.image" value="mainCtrl.singleItem.image" placeholder="{{mainCtrl.singleItem.image}}">
-    <input type="text" ng-model="mainCtrl.singleItem.productName" value="mainCtrl.singleItem.productName" placeholder="{{mainCtrl.singleItem.productName}}">
-    <input type="text" ng-model="mainCtrl.singleItem.price" value="mainCtrl.singleItem.price" placeholder="{{mainCtrl.singleItem.price}}">
-    <textarea type="text" ng-model="mainCtrl.singleItem.productDescription" value="mainCtrl.singleItem.productDescription" placeholder={{mainCtrl.singleItem.productDescription}}></textarea>
+  <form ng-submit="adminCtrl.editProduct(adminCtrl.singleItem)">
+    <input type="text" ng-model="adminCtrl.singleItem.image" value="adminCtrl.singleItem.image">
+    <input type="text" ng-model="adminCtrl.singleItem.productName" value="adminCtrl.singleItem.productName">
+    <input type="text" ng-model="adminCtrl.singleItem.price" value="adminCtrl.singleItem.price">
+    <textarea type="text" ng-model="adminCtrl.singleItem.productDescription" value="adminCtrl.singleItem.productDescription"></textarea>
 
     <button type="submit">Update Product</button>
   </form>

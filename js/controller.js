@@ -3,8 +3,10 @@
 (function () {
   "use strict";
 
+// store controller (user)
+
   angular.module('storeApp')
-    .controller('MainController', function (StoreService, $rootScope, $routeParams, $location) {   //inject service here
+    .controller('MainController', function (StoreService, $rootScope, $scope, $routeParams, $location) {   //inject service here
                                                                   //$location makes url available to app, allows changes to url
                                                                   //get current path: $location.path(); change path: $location.path('/newValue')
       var mainCtrl = this;  //alias for MainController
@@ -12,16 +14,75 @@
       StoreService.getItems().success(function(data) {
         mainCtrl.items = data;
       });
-                                    //C: productId
+
       StoreService.getItem($routeParams.itemIndex).success(function(data) {
         mainCtrl.singleItem = data;
             // or item?
       });
-                                    //C: productId
+
       mainCtrl.currentIndex = $routeParams.itemIndex;
 
+
+  // shopping cart
+
+
+        mainCtrl.cart = StoreService.getCartItems();
+        mainCtrl.total = StoreService.total();
+        // cart.total = 0; // or cartCtrl.total=0??
+
+        // mainCtrl.singleCartItem = StoreService.getCartItem($routeParams.itemIndex);
+
+        mainCtrl.addToCart = function(item) {
+          StoreService.addToCart(item);
+          $location.path('/user/cart');
+        };
+
+        mainCtrl.deleteFromCart = function(item) {
+          StoreService.deleteFromCart(item);
+        };
+        // not sure if I need update for cart
+
+        // C: cart.updateTotal = function () {
+        // cart.total = CartService.calculateTotal();
+        //return cart.total;
+        //};
+
+        // mainCtrl.total = function() {
+        //   // add from service
+        // };
+
+        mainCtrl.addReview = function (item, review) {
+          StoreService.addReview(item, review);
+          $scope.review = {};
+        };
+
+      });
+
+})();
+
+
+//admin controller
+
+(function() {
+  "use strict";
+  angular.module('storeApp')
+    .controller('AdminController', function (StoreService, $rootScope, $scope, $routeParams, $location) {
+
+      var adminCtrl = this;  //alias for AdminController
+
+      StoreService.getItems().success(function(data) {
+        adminCtrl.items = data;
+      });
+
+      StoreService.getItem($routeParams.itemIndex).success(function(data) {
+        adminCtrl.singleItem = data;
+        // or item?
+      });
+
+      adminCtrl.currentIndex = $routeParams.itemIndex;
+
   // add product
-      mainCtrl.addProduct = function (newItem) { //using this method in form in addNewItem.html
+      adminCtrl.addProduct = function (newItem) { //using this method in form in addNewItem.html
         //newItem.price = parseInt(newItem.price);
         StoreService.addItem(newItem); //see service's public API method
         // $scope.newItem = {};  //to clear out form
@@ -30,61 +91,16 @@
       };
 
   // delete product
-      mainCtrl.deleteProduct = function (id) {   //was (item)
+      adminCtrl.deleteProduct = function (id) {   //was (item)
         StoreService.deleteItem(id);
       };
 
   // edit product
-      mainCtrl.editProduct = function (item) {
-        StoreService.editItem(item, $routeParams.itemIndex);  //C: productId for my item Index
+      adminCtrl.editProduct = function (item) {
+        // $location.path('/admin/listView');
+        StoreService.editItem(item, $routeParams.itemIndex);  //or just item._id?
         $location.path('/admin/listView');
       };
 
-
-    })
-    .controller('CartController', function (CartService, $location) {
-
-    // shopping cart
-
-    var cartCtrl = this;  //C has this as cart, not cartCtrl - same as variable in service ??
-
-    cartCtrl.cartProducts = CartService.getCartItems();
-    // cart.total = 0; // or cartCtrl.total=0??
-
-    // cartCtrl.singleCartItem = CartService.getCartItem($routeParams.itemIndex);
-
-    cartCtrl.addToCart = function(item) {
-      CartService.addToCart(item);
-      $location.path('/user/cart');
-    };
-
-    cartCtrl.deleteFromCart = function(item) {
-      CartService.deleteFromCart(item);
-    };
-    // not sure if I need update for cart
-
-    // C: cart.updateTotal = function () {
-    // cart.total = CartService.calculateTotal();
-    //return cart.total;
-    //};
-
-    cartCtrl.total = function() {
-      var total = 0;
-      angular.forEach(cartCtrl.cartProducts, function(item) {
-        total += item.quant * item.price;
-      })
-      return cartCtrl.total;
-    };
-
-  })
-    .controller('ReviewController', function (StoreService, $scope, $routeParams, $location) {
-
-      var reviewCtrl = this;
-
-      reviewCtrl.addReview = function (review) {
-        StoreService.addReview(review);
-        $scope.review = {};
-      };
     });
-
-}) ();
+})();

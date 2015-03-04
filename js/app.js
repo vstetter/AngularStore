@@ -12,17 +12,17 @@
         templateUrl: 'views/main.html',
         controller: 'MainController as mainCtrl'
       })
-      .when('/admin/editproduct/:itemIndex', {   
+      .when('/admin/editproduct/:itemIndex', {
         templateUrl:'views/admin/editItem.html',
-        controller: 'MainController as mainCtrl'
+        controller: 'AdminController as adminCtrl'
       })
       .when('/admin/listView', {
         templateUrl: 'views/admin/listView.html',
-        controller: 'MainController as mainCtrl'
+        controller: 'AdminController as adminCtrl'
       })
       .when('/admin/addproduct', {
       templateUrl: 'views/admin/addNewItem.html',
-      controller: 'MainController as mainCtrl'
+      controller: 'AdminController as adminCtrl'
       })
       .when('/user/listView', {
         templateUrl: 'views/user/listView.html',
@@ -30,7 +30,7 @@
       })
       .when('/user/cart', {
         templateUrl: 'views/user/shoppingCart.html',
-        controller: 'CartController as cartCtrl'
+        controller: 'MainController as mainCtrl'
       })
       .when('/user/detail/:itemIndex', {
         templateUrl: 'views/user/detailView.html',
