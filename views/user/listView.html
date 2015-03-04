@@ -19,14 +19,11 @@
       <div class="productInfo">
         <h3>{{item.productName}}</h3>
         <h4>${{item.price}}</h4>
-        <p>{{item.productDescription}}</p>
+  <!--       <p>{{item.productDescription}}</p> -->
+        <a href="#/user/detail/{{$index}}">More Details</a>
         <a href="#/user/cart/" ng-click="mainCtrl.addToCart(item)">Add to Cart</a>
         </div>
       </div>
     </li>
   </ul>
 </div>
-
-
-<!--add quantity selection-->
-<!-- add detail view? -->

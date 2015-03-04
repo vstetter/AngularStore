@@ -12,7 +12,8 @@ angular.module('storeApp')
       image: "https://s-media-cache-ak0.pinimg.com/736x/43/c5/9e/43c59e8cc179639ecbf9f28d9f9927c8.jpg",
       productName: "Random Light by Moooi",
       price: "655",
-      productDescription: "Modern classic made from resin drained yarn."
+      productDescription: "Modern classic made from resin drained yarn.",
+      review: []
 
     },
 
@@ -20,35 +21,41 @@ angular.module('storeApp')
       image: "https://s-media-cache-ak0.pinimg.com/736x/65/5e/cc/655ecc43b71c7dafeac28056dab65917.jpg",
       productName: "Alium Light by John Lewis",
       price: "320",
-      productDescription: "Light with 36 arms and crystal glass beads."
+      productDescription: "Light with 36 arms and crystal glass beads.",
+      review: []
+
     },
 
     {
       image: "https://s-media-cache-ak0.pinimg.com/736x/b7/b6/92/b7b69237e7396f7bc5fcc285b5bf11f6.jpg",
       productName: "Roberta Pendant by John Lewis",
       price: "300",
-      productDescription: "Brass rings with crystal drop glass droplets."
+      productDescription: "Brass rings with crystal drop glass droplets.",
+      review: []
     },
 
     {
       image: "https://s-media-cache-ak0.pinimg.com/736x/f9/e1/e7/f9e1e7093e39b1c553de06a81fb63d80.jpg",
       productName: "The Nest by Edward Linacre",
       price: "345",
-      productDescription: "Honeycomb pendant light made from bamboo veneer."
+      productDescription: "Honeycomb pendant light made from bamboo veneer.",
+      review: []
     },
 
     {
       image: "https://s-media-cache-ak0.pinimg.com/736x/1b/66/c6/1b66c60d689f371f31883ce526edd4a0.jpg",
       productName: "Koura Light by David Trubridge",
       price: "450",
-      productDescription: "Bamboo plywood light comes ready to assemble."
+      productDescription: "Bamboo plywood light comes ready to assemble.",
+      review: []
     },
 
     {
       image: "https://s-media-cache-ak0.pinimg.com/736x/6d/ea/f8/6deaf89320625eb1b179e82354db049a.jpg",
       productName: "Pendant 2 by Flaco Design",
       price: "400",
-      productDescription: "Ash veneer pendant handmade in Denmark."
+      productDescription: "Ash veneer pendant handmade in Denmark.",
+      review: []
     }
 
     ];
@@ -69,6 +76,11 @@ angular.module('storeApp')
       // $rootScope.$broadcast('item:created');
 
     };
+
+    var addReview = function (review) {
+      products.push(review)
+    };
+
 
     var deleteProduct = function (item) {
       var idx = products.indexOf(item);
@@ -118,7 +130,8 @@ angular.module('storeApp')
       addToCart: addToCart,
       getCartItems: getCartProducts,
       deleteFromCart: deleteCartProducts,
-      getCartItem: getSingleCartProduct
+      getCartItem: getSingleCartProduct,
+      addReview: addReview
     };
 
   });

@@ -1,13 +1,53 @@
-<!-- add link back to list view -->
-<!--
+<h1 class="logo">LightBox</h1>
 
-<div>
+<div class="nav_Views">
+  <a href="#/user/listView"><span class="fa-lg">
+    <i class="fa fa-arrow-left"></i>
+  </span>Continue Shopping</a>
+</div>
 
-  <img ng-src="{{item.image}}"/>
-  <div class="productInfo">
-    <h3>{{item.productName}}</h3>
-    <h4>\${{item.price}}</h4>
-    <p>{{item.productDescription}}</p>
-<button ng-click="addToCart();">Add to Cart</button>
 
-</div> -->
+<div class="detailContainer">
+
+    <div class = "itemDetail">
+
+      <div class="productImagePrice">
+        <img ng-src="{{mainCtrl.singleItem.image}}" height='250' alt=""/>
+        <h3>{{mainCtrl.singleItem.productName}}</h3>
+        <h4>${{mainCtrl.singleItem.price}}</h4>
+      </div>
+      <div class="productDetails">
+        <p>{{mainCtrl.singleItem.productDescription}}</p>
+        <a href="#/user/cart/" ng-click="mainCtrl.addToCart(mainCtrl.singleItem)">Add to Cart</a>
+        <a href="" ng-click="showReviews = !showReviews">Show Reviews</a>
+      </div>
+    </div>
+
+  <div class="productReviews" ng-show = "showReviews">
+    <ul>
+      <li class="review" ng-repeat="review in reviewCtrl.reviews">
+        <p>Stars: {{reviewCtrl.review.stars}}</p>
+        <p>{{reviewCtrl.review.body}}</p>
+        <p>By: {{reviewCtrl.review.author}}</p>
+      </li>
+    </ul>
+    <a href="" ng-click="showAddReview = !showAddReview">Add Review</a>
+    <div class="addReview" ng-show = "showAddReview" >
+      <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(item)">
+        <p class="stars">Stars: <span><input type="number" name="reviewstars" ng-model="review.stars"></span></p>
+        <p class="reviewBody">
+          <textarea name="reviewBody" ng-model="review.body" cols="30" rows="10"></textarea>
+        <p>  <label for="reviewBody" ng-model="review.author">by:</label>
+        <!--   <input type="email"/> -->
+
+          <button type="submit">Submit Review</button>
+        </p>
+      </form>
+
+
+    </div>
+
+
+
+  </div>
+</div>

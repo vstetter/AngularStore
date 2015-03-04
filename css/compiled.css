@@ -176,6 +176,50 @@ button {
   font-size: 2em;
   margin-top: 2%; }
 
+.nav_Views {
+  padding: 2em; }
+  .nav_Views a {
+    display: inline-block;
+    padding-right: 2em; }
+
+.detailContainer {
+  width: 80%;
+  margin: 0 auto; }
+
+.itemDetail, .productReviews {
+  border: thin solid #56524e;
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
+  -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
+  box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
+  width: 100%;
+  min-height: 375px;
+  text-align: center;
+  padding: 1%;
+  margin: 2%;
+  /*   button {
+  font-size: 0.8em;
+  padding: 1% 2% 1% 2%;
+} */ }
+  .itemDetail h3, .itemDetail h4, .itemDetail p, .productReviews h3, .productReviews h4, .productReviews p {
+    padding-top: 2%;
+    padding-bottom: 2%; }
+  .itemDetail p, .productReviews p {
+    padding-top: 1%;
+    margin-bottom: 5%; }
+  .itemDetail a, .productReviews a {
+    border: thin solid #56524e;
+    font-size: 0.8em;
+    padding: 1% 2% 1% 2%; }
+  .itemDetail .productImagePrice, .itemDetail .productDetails, .productReviews .productImagePrice, .productReviews .productDetails {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    padding-top: 2%; }
+
+.logo {
+  font-size: 2em;
+  margin-top: 2%; }
+
 .cartContainer {
   width: 80%;
   margin: 0 auto;

@@ -66,9 +66,21 @@
         //   // StoreService.getItems().success (function(data)) {
         //
         // }
-        }) ;
+        // }) ;
 
 
+    });
+
+    angular.module('storeApp')
+    .controller('ReviewController', function (StoreService, $scope, $routeParams, $location) {
+
+
+      var reviewCtrl = this;
+
+      reviewCtrl.addReview = function (review) {
+        StoreService.addReview(review);
+        $scope.review = {};
+      }
     });
 
 }) ();
