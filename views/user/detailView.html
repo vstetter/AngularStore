@@ -27,14 +27,12 @@
           </div>
         </div>
       </div>
-    </div>
 
-  <div class="productReviews"  ng-show = "showReviews"> <!-- ng-controller="ReviewController as reviewCtrl" -->
-    <p>Reviews:</p>
+  <div class="productReviews"  ng-show = "showReviews">
+    <h3>Reviews:</h3>
 
-    <ul>
-      <li class="review" ng-repeat="review in mainCtrl.singleItem.reviews"> <!--"review in reviewCtrl.reviews" -->
-        <p>Stars: {{review.stars}}</p>
+    <ul class="reviewlist">
+      <li class="review" ng-repeat="review in mainCtrl.singleItem.reviews">
         <p>{{review.body}}</p>
         <p>By: {{review.author}}</p>
       </li>
@@ -42,12 +40,9 @@
     <a href="" ng-click="showAddReview = !showAddReview">Add A Review</a>
     <div class="addReview" ng-show = "showAddReview" >
       <form name="reviewForm" ng-submit="mainCtrl.addReview(mainCtrl.singleItem, review)">
-        <p class="stars">Stars: <span><input type="number" name="reviewstars" ng-model="review.stars"></span></p>
         <p class="reviewBody">
-          <textarea name="reviewBody" ng-model="review.body" cols="30" rows="10"></textarea>
-        <p>  <label for="reviewBody" ng-model="review.author">by:</label>
-        <!--   <input type="email"/> -->
-
+          <textarea name="reviewBody" ng-model="review.body" cols="20" rows="5" placeholder="Write your review here"></textarea>
+          <input type="text" name="reviewAuthor" ng-model="review.author" placeholder="Your Name">
           <button type="submit">Submit Review</button>
         </p>
       </form>

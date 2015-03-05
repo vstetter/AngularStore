@@ -97,11 +97,6 @@ angular.module('storeApp')
   // reviews
 
     var addReview = function (item, review) {
-      review = {
-        stars: 0,
-        body: '',
-        author: ''
-      }
       item.reviews.push(review);
       $http.put(url + '/' + item._id, item);
     };
