@@ -14,17 +14,12 @@
 <div class="cartContainer" ng-controller="MainController as mainCtrl">
   <ul>
     <li class = "cartitem" ng-repeat="item in mainCtrl.cart">
-
-<!--       <img ng-src="{{item.image}}" height='250' alt=""/> -->
         <p class="cartName">{{item.productName}}</p>
-        <p class="cartPrice">${{item.price}}</p>
-        <p class="itemQuantity">Quantity: <span><input type="number" name="inputquant" ng-model="item.quant"></span></p>
-        <div class="cartbuttons">
-          <button type="submit" ng-click="mainCtrl.deleteFromCart(item)">Delete</button>
+        <a href="" class="cartbutton" type="submit" ng-click="mainCtrl.deleteFromCart(item)">Remove</a>
+        <p class="cartPrice">Price:  ${{item.price}}</p>
+        <p class="itemQuantity">Quantity:</p>  <p class="inputQuant"><input type="number" name="inputquant" ng-model="item.quant" min="1" max="10"></p>
 
-          <a href="">Update</a>
-        </div>
-        <p class="itemTotal">Item total: {{item.quant * item.price | currency}}</p>
+        <p class="itemTotal">Item total:  {{item.quant * item.price | currency}}</p>
     </li>
   </ul>
   <p class="totalPrice"> Total: {{mainCtrl.total() | currency}}</p>
@@ -32,6 +27,3 @@
 
 
 </div>
-
-
-<!-- check grand total -->

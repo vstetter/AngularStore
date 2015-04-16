@@ -21,6 +21,7 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
+  background-color: rgba(237, 237, 237, 0.6);
   border: thin solid $color-accent;
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow:    0px 7px 20px 0px rgba(50, 50, 50, 0.3);
@@ -38,17 +39,21 @@
   p {
     padding-top: 1%;
   }
-  .buttons2 div {
+  .buttons2 {
     display: inline-block;
     vertical-align: top;
-    width: 30%;
+    width: 80%;
 /*     font-size: 0.8em; */
     padding: 4% 2% 1% 2%;
   }
-  a {
-    border: thin solid $color-accent;
+  .button1 {
+    border: none;
     font-size: 1em;
     padding: 2% 3% 2% 3%;
+    &:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none;
+    }
   }
   .listviewEdit {
     padding: 1% 2% 1% 2%;

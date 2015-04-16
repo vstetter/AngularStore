@@ -21,13 +21,11 @@
         <h3>{{item.productName}}</h3>
         <h4>${{item.price}}</h4>
         <p>{{item.productDescription}}</p>
-        <a href="#/admin/editproduct/{{item._id}}" class="listviewEdit">Edit</a>
-        <button type="submit" ng-click="adminCtrl.deleteProduct(item._id)">Delete Item</button>
-  <!--       <a href="" ng-click="adminCtrl.deleteProduct(item._id)">Delete Item</a> -->
+        <div class="buttons2">
+          <a class="button1" href="#/admin/editproduct/{{item._id}}" class="listviewEdit">Edit</a>
+          <a class="button1" href="" ng-click="adminCtrl.deleteProduct(item._id)">Delete Item</a>
+        </div>
       </div>
     </li>
   </ul>
 </div>
-
-
-<!--     <a href="#/store/{{item._id}}/edit">Edit</a> | <a href="" ng-click="deleteItem(item._id)">Delete</a></p>   -->

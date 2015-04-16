@@ -18,13 +18,14 @@ a {
 font-family: 'Permanent Marker', cursive;
 
 font-family: 'Special Elite', cursive; */
+/* #56524e */
 .shadow {
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3); }
 
 body {
-  background-image: url('/images/brickwall_@2X.png'); }
+  background-image: url("/images/brickwall_@2X.png"); }
 
 h1 {
   font-family: 'Permanent Marker', cursive;
@@ -33,37 +34,55 @@ h1 {
   font-size: 60px; }
 
 h2, h3, h4 {
-  font-family: 'Special Elite', cursive;
+  font-family: "Special Elite", cursive;
   text-align: center;
-  color: #56524e; }
+  color: #2f2e33; }
 
 p {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   color: black; }
 
 a {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #56524e; }
+  font-family: "Source Sans Pro", sans-serif;
+  color: #2f2e33; }
+
+.adminLink {
+  font-size: 1em;
+  text-align: right;
+  padding: 1em; }
 
 .logo_large {
   font-size: 4em;
-  margin-top: 10%; }
+  margin-top: 2%; }
 
 .container_home {
-  width: 50%;
-  min-height: 300px;
+  width: 80%;
+  min-height: 600px;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
   padding-top: 10%;
   padding-bottom: 10%;
-  border: 2px solid #56524e;
+  background: linear-gradient(rgba(237, 237, 237, 0.5), rgba(237, 237, 237, 0.5)), url("/images/modernLight1.jpg") center center no-repeat;
+  background-size: cover;
+  border: 2px solid #2f2e33;
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3); }
-  .container_home p {
+  .container_home .mainText {
     text-align: center;
-    font-size: 2em;
-    line-height: 2em; }
+    padding-top: 8em; }
+  .container_home h3, .container_home h4 {
+    font-family: "Source Sans Pro", sans-serif; }
+  .container_home h3 {
+    font-size: 3em; }
+  .container_home h4 {
+    font-size: 1.5em; }
+  .container_home a {
+    border: none; }
+    .container_home a:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none; }
 
 .logo {
   font-size: 2em;
@@ -95,7 +114,8 @@ h2 {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  border: thin solid #56524e;
+  background-color: rgba(237, 237, 237, 0.6);
+  border: thin solid #2f2e33;
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
@@ -110,16 +130,19 @@ h2 {
     padding-bottom: 2%; }
   .item p {
     padding-top: 1%; }
-  .item .buttons2 div {
+  .item .buttons2 {
     display: inline-block;
     vertical-align: top;
-    width: 30%;
+    width: 80%;
     /*     font-size: 0.8em; */
     padding: 4% 2% 1% 2%; }
-  .item a {
-    border: thin solid #56524e;
+  .item .button1 {
+    border: none;
     font-size: 1em;
     padding: 2% 3% 2% 3%; }
+    .item .button1:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none; }
   .item .listviewEdit {
     padding: 1% 2% 1% 2%;
     font-size: 0.8em; }
@@ -141,15 +164,21 @@ input, textarea {
   display: block;
   width: 100%;
   padding: 2%;
-  border: thin solid #56524e;
+  border: thin solid #2f2e33;
   line-height: 1.5em;
   font-size: 1em;
   margin-top: 1%; }
 
-button {
-  font-size: 0.8em;
-  padding: 1% 2% 1% 2%;
-  margin-top: 2%; }
+textarea {
+  margin-bottom: 2%; }
+
+.button1 {
+  border: none;
+  font-size: 1em;
+  padding: 1% 2% 1% 2%; }
+  .button1:hover {
+    box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+    border: none; }
 
 .logo {
   font-size: 2em;
@@ -163,20 +192,23 @@ button {
 .editProductContainer {
   width: 70%;
   margin: 0 auto; }
-
-input, textarea {
-  display: block;
-  width: 100%;
-  padding: 2%;
-  border: thin solid #56524e;
-  line-height: 1.5em;
-  font-size: 1em;
-  margin-top: 1%; }
-
-button {
-  font-size: 0.8em;
-  padding: 1% 2% 1% 2%;
-  margin-top: 2%; }
+  .editProductContainer input, .editProductContainer textarea {
+    display: block;
+    width: 100%;
+    padding: 2%;
+    border: thin solid #2f2e33;
+    line-height: 1.5em;
+    font-size: 1em;
+    margin-top: 1%; }
+  .editProductContainer textarea {
+    margin-bottom: 2%; }
+  .editProductContainer .button1 {
+    border: none;
+    font-size: 1em;
+    padding: 1% 2% 1% 2%; }
+    .editProductContainer .button1:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none; }
 
 .logo {
   font-size: 2em;
@@ -192,8 +224,9 @@ button {
   width: 80%;
   margin: 0 auto; }
 
-.itemDetail, .productReviews {
-  border: thin solid #56524e;
+.itemDetail {
+  border: thin solid #2f2e33;
+  background-color: rgba(237, 237, 237, 0.6);
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
@@ -202,46 +235,81 @@ button {
   text-align: center;
   padding: 1%;
   margin: 2%; }
-  .itemDetail h3, .itemDetail h4, .itemDetail p, .productReviews h3, .productReviews h4, .productReviews p {
-    padding-top: 2%;
-    padding-bottom: 2%; }
-  .itemDetail p, .productReviews p {
-    padding-top: 1%;
-    margin-bottom: 5%; }
-  .itemDetail .buttons2 div, .productReviews .buttons2 div {
-    display: inline-block;
-    vertical-align: top;
-    width: 30%;
-    /*     font-size: 0.8em; */
-    padding: 4% 2% 1% 2%; }
-  .itemDetail a, .productReviews a {
-    border: thin solid #56524e;
-    font-size: 0.8em;
+
+.productImagePrice h3, .productImagePrice h4 {
+  padding-top: 2%;
+  padding-bottom: 2%; }
+
+.productDetails p {
+  padding-top: 1%;
+  margin-bottom: 5%; }
+.productDetails .buttons2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+  /*     font-size: 0.8em; */
+  padding: 4% 2% 1% 2%; }
+.productDetails .button1 {
+  border: none;
+  font-size: 1em;
+  padding: 2% 3% 2% 3%; }
+  .productDetails .button1:hover {
+    box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+    border: none; }
+
+.productImagePrice, .productDetails {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  padding-top: 2%; }
+
+.productReviews {
+  margin-top: 1.5%; }
+  .productReviews h3 {
+    margin-bottom: 0;
+    padding-left: 4%;
+    text-align: left; }
+  .productReviews .addReviewButton {
+    /*     border: thin solid \$color-accent; */
+    font-family: "Special Elite", cursive;
+    font-size: 0.75em;
     padding: 1% 2% 1% 2%; }
-  .itemDetail .productImagePrice, .itemDetail .productDetails, .productReviews .productImagePrice, .productReviews .productDetails {
-    display: inline-block;
-    width: 49%;
-    vertical-align: top;
-    padding-top: 2%; }
+    .productReviews .addReviewButton:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none; }
 
-.productreviews h3 {
-  margin-bottom: 0; }
-
-.reviewlist p {
-  margin-top: 0%;
-  margin-bottom: 0;
-  text-align: left; }
+.reviewlist {
+  padding: 1% 4% 1% 4%; }
+  .reviewlist h4 {
+    text-align: left;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0; }
+    .reviewlist h4 span {
+      font-size: 0.7em;
+      padding-left: 1em; }
+  .reviewlist p {
+    padding-top: 0;
+    margin-bottom: 1%;
+    margin-top: -0.3em;
+    text-align: left;
+    padding-left: 2%;
+    padding-bottom: 1%; }
 
 .logo {
   font-size: 2em;
   margin-top: 2%; }
+
+.shoppingCartContainer h3 {
+  margin-bottom: 1em; }
 
 .cartContainer {
   width: 80%;
   margin: 0 auto;
   display: block;
   min-height: 100px;
-  border: 2px solid #56524e;
+  border: 2px solid #2f2e33;
+  background-color: rgba(237, 237, 237, 0.6);
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3); }
@@ -249,28 +317,28 @@ button {
 .cartitem {
   display: block;
   margin-top: 3%; }
-  .cartitem p {
+  .cartitem .cartName, .cartitem .cartbutton, .cartitem .cartPrice, .cartitem .itemQuantity, .cartitem .inputQuant, .cartitem .itemTotal {
     display: inline-block;
     vertical-align: top;
     padding-left: 2%; }
   .cartitem .cartName {
-    width: 25%; }
+    width: 30%; }
+  .cartitem .cartbutton {
+    width: 10%;
+    font-size: 0.75em;
+    vertical-align: middle; }
   .cartitem .cartPrice {
-    width: 10%; }
+    width: 15%; }
   .cartitem .itemQuantity {
-    width: 20%; }
-  .cartitem .cartbuttons {
-    width: 15%;
-    display: inline-block; }
-    .cartitem .cartbuttons a {
-      display: block;
-      font-size: 0.8em;
-      padding: 1% 2% 1% 2%;
-      margin-top: 2%; }
+    width: 8%; }
+  .cartitem .inputQuant {
+    width: 7%; }
   .cartitem .itemTotal {
     width: 25%; }
 
 .totalPrice {
-  padding-left: 74%;
+  padding-left: 75%;
   padding-top: 5%;
   padding-bottom: 5%; }
+
+/*# sourceMappingURL=compiled.css.map */
