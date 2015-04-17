@@ -21,12 +21,13 @@
         <h4>${{item.price}}</h4>
   <!--       <p>{{item.productDescription}}</p> -->
         <div class="buttons2">
-          <div>
-            <a href="#/user/detail/{{item._id}}">More Details</a>
-          </div>
+        
+            <a class="button1" href="#/user/detail/{{item._id}}">More Details</a>
+
       <!--     <div ng-controller="CartController as cartCtrl"> -->
-            <a href="#/user/cart/" ng-click="mainCtrl.addToCart(item)">Add to Cart</a>
-          </div>
+
+            <a class="button1" href="#/user/cart/" ng-click="mainCtrl.addToCart(item)">Add to Cart</a>
+
         </div>
       </div>
     </li>

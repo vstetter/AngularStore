@@ -10,13 +10,13 @@
 
     <h3>Add a new product</h3>
 
-    <form ng-submit="adminCtrl.addProduct(newItem)">
+    <form>
       <input type="text" ng-model="newItem.image" placeholder="img Url">
       <input type="text" ng-model="newItem.productName" placeholder="Item Name">
       <input type="text" ng-model="newItem.price" placeholder="Price">
       <textarea type="text" ng-model="newItem.productDescription" placeholder="Item Description"></textarea>
 
-      <button type="submit">Add Product</button>
+      <a class="button1" href="" type="submit" ng-click="adminCtrl.addProduct(newItem)">Add Product</a>
     </form>
 
   </div>

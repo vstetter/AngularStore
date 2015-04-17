@@ -25,8 +25,15 @@ input, textarea {
   margin-top: 1%;
 }
 
-button {
-  font-size: 0.8em;
+textarea {
+  margin-bottom: 2%;
+}
+.button1 {
+  border: none;
+  font-size: 1em;
   padding: 1% 2% 1% 2%;
-  margin-top: 2%;
+  &:hover {
+    box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+    border: none;
+  }
 }

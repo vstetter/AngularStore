@@ -19,38 +19,32 @@
       <div class="productDetails">
         <p>{{mainCtrl.singleItem.productDescription}}</p>
         <div class="buttons2">
-          <!-- <div ng-controller="CartController as cartCtrl"> -->
-            <a href="#/user/cart/" ng-click="mainCtrl.addToCart(mainCtrl.singleItem)">Add to Cart</a>
-          </div>
-          <div>
-            <a href="" ng-click="showReviews = !showReviews">Show Reviews</a>
-          </div>
+            <a class="button1" href="#/user/cart/" ng-click="mainCtrl.addToCart(mainCtrl.singleItem)">Add to Cart</a>
+            <a class="button1" href="" ng-click="showReviews = !showReviews">Show Reviews</a>
+
         </div>
       </div>
-    </div>
 
-  <div class="productReviews"  ng-show = "showReviews"> <!-- ng-controller="ReviewController as reviewCtrl" -->
-    <p>Reviews:</p>
+  <div class="productReviews"  ng-show = "showReviews">
+    <h3>Reviews <span>  <a class="addReviewButton" href="" ng-click="showAddReview = !showAddReview">Add a Review</a></span></h3>
 
-    <ul>
-      <li class="review" ng-repeat="review in mainCtrl.singleItem.reviews"> <!--"review in reviewCtrl.reviews" -->
-        <p>Stars: {{review.stars}}</p>
-        <p>{{review.body}}</p>
-        <p>By: {{review.author}}</p>
-      </li>
-    </ul>
-    <a href="" ng-click="showAddReview = !showAddReview">Add A Review</a>
-    <div class="addReview" ng-show = "showAddReview" >
-      <form name="reviewForm" ng-submit="mainCtrl.addReview(mainCtrl.singleItem, review)">
-        <p class="stars">Stars: <span><input type="number" name="reviewstars" ng-model="review.stars"></span></p>
+    <div ng-show = "showAddReview" >
+      <form name="reviewForm">
         <p class="reviewBody">
-          <textarea name="reviewBody" ng-model="review.body" cols="30" rows="10"></textarea>
-        <p>  <label for="reviewBody" ng-model="review.author">by:</label>
-        <!--   <input type="email"/> -->
-
-          <button type="submit">Submit Review</button>
+          <input type="text" name="reviewAuthor" ng-model="review.author" placeholder="Your Name">
+          <input type="text" name="reviewTitle" ng-model="review.title" placeholder="Review Title">
+          <textarea name="reviewBody" ng-model="review.body" cols="20" rows="5" placeholder="Write your review here"></textarea>
+          <a class="button1" href="" type="submit" ng-click="mainCtrl.addReview(mainCtrl.singleItem, review)">Submit Review</a>
         </p>
       </form>
     </div>
+
+    <ul class="reviewlist">
+      <li class="review" ng-repeat="review in mainCtrl.singleItem.reviews">
+        <h4>{{review.title}} <span class="author">{{review.author}} </span></p></h4>
+        <p>{{review.body}}</p>
+      </li>
+    </ul>
+
   </div>
 </div>

@@ -17,9 +17,10 @@
   margin: 0 auto;
 }
 
-.itemDetail, .productReviews {
+.itemDetail {
 
   border: thin solid $color-accent;
+  background-color: rgba(237, 237, 237, 0.6);
   -webkit-box-shadow: 0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   -moz-box-shadow:    0px 7px 20px 0px rgba(50, 50, 50, 0.3);
   box-shadow:         0px 7px 20px 0px rgba(50, 50, 50, 0.3);
@@ -28,26 +29,37 @@
   text-align: center;
   padding: 1%;
   margin: 2%;
-  h3, h4, p {
+}
+.productImagePrice {
+  h3, h4 {
     padding-top: 2%;
     padding-bottom: 2%;
   }
+}
+.productDetails {
   p {
     padding-top: 1%;
     margin-bottom: 5%;
   }
-  .buttons2 div {
+  .buttons2 {
     display: inline-block;
     vertical-align: top;
-    width: 30%;
+    width: 80%;
     /*     font-size: 0.8em; */
     padding: 4% 2% 1% 2%;
   }
-  a {
-    border: thin solid $color-accent;
-    font-size: 0.8em;
-    padding: 1% 2% 1% 2%;
+
+  .button1 {
+    border: none;
+    font-size: 1em;
+    padding: 2% 3% 2% 3%;
+    &:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none;
+    }
   }
+}
+
   .productImagePrice, .productDetails {
     display: inline-block;
     width: 49%;
@@ -55,4 +67,46 @@
     padding-top: 2%;
   }
 
+
+
+.productReviews {
+  margin-top: 1.5%;
+  h3 {
+  margin-bottom: 0;
+  padding-left: 4%;
+  text-align: left;
+  }
+  .addReviewButton {
+/*     border: thin solid \$color-accent; */
+    font-family: $font-accent;
+    font-size: 0.75em;
+    padding: 1% 2% 1% 2%;
+    &:hover {
+      box-shadow: 0 0 5px 5px rgba(255, 211, 78, 0.6);
+      border: none;
+    }
+  }
+}
+
+.reviewlist {
+  padding: 1% 4% 1% 4%;
+  h4 {
+    text-align: left;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    span {
+      font-size: 0.7em;
+      padding-left: 1em;
+      }
+    }
+  p {
+    padding-top: 0;
+    margin-bottom: 1%;
+    margin-top: -0.3em;
+    text-align: left;
+    padding-left: 2%;
+    padding-bottom: 1%;
+    }
 }
